@@ -41,7 +41,13 @@ docker cp /etc/localtime $ContainerName:/etc/
 - 查看所有容器情况：docker stats -a
 ### 进入docker内部的bash
 docker exec -it $ContainerName /bin/bash
+### 第一次进入容器后退出的两种方式 
+- exit 会结束容器
+- ctrl+p+q 不会结束容器
 
+### 生成镜像的两种方法
+- docker commit ${containerId} $REPOSITORY:tag
+- dockerfile
 ## Docker Registry
 ### Docker Registry 2.0搭建
 docker run -d -p 5000:5000 --restart=always --name registry2 registry:2
